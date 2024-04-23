@@ -35,8 +35,24 @@
               <td><?php echo $user['vorname'] . " " . $user['nachname'] ?></td>
               <td><?php echo $user['1911_unterweisung'] != null ? "<span class='text-success'>".date('d.m.Y', strtotime($user['1911_unterweisung']))."</span>" : "<span class='text-danger'>keine</span>" ?></td>
               <td><?php echo $user['1931_unterweisung'] != null ? "<span class='text-success'>".date('d.m.Y', strtotime($user['1931_unterweisung']))."</span>" : "<span class='text-danger'>keine</span>" ?></td>
-              <td><?php echo $user['1941_unterweisung'] != null ? "<span class='text-success'>".date('d.m.Y', strtotime($user['1941_unterweisung']))."</span>" : "<span class='text-danger'>keine</span>" ?></td>
-              <td><?php echo $user['1942_unterweisung'] != null ? "<span class='text-success'>".date('d.m.Y', strtotime($user['1942_unterweisung']))."</span>" : "<span class='text-danger'>keine</span>" ?></td>
+              <td>
+                <?php
+                  if(DLR_checkATN("511", $user['uid'], "true")) {
+                    echo $user['1941_unterweisung'] != null ? "<span class='text-success'>" . date('d.m.Y', strtotime($user['1941_unterweisung'])) . "</span>" : "<span class='text-danger'>keine</span>";
+                  } else {
+                    echo "<small class='text-muted'>kein Bootsführer</small>";
+                  }
+                ?>
+              </td>
+              <td>
+                <?php
+                  if(DLR_checkATN("511", $user['uid'], "true")) {
+                    echo $user['1942_unterweisung'] != null ? "<span class='text-success'>" . date('d.m.Y', strtotime($user['1942_unterweisung'])) . "</span>" : "<span class='text-danger'>keine</span>";
+                  } else {
+                    echo "<small class='text-muted'>kein Bootsführer</small>";
+                  }
+                ?>
+              </td>
               <td><i class="text-muted">coming soon...</i></td>
               <td></td>
             </tr>
