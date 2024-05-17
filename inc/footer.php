@@ -130,7 +130,7 @@ if (isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
         </div>
         <div class="modal-footer">
           <button type="button" class="btn bg-gradient-secondary" data-bs-dismiss="modal">Abbrechen</button>
-          <button type="submit" class="btn bg-gradient-primary">Hochlanden</button>
+          <button type="submit" class="btn bg-gradient-primary">Hochladen</button>
         </div>
       </div>
     </div>

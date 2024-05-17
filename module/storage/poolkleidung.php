@@ -1,6 +1,6 @@
 <?php
 
-  if ($_SESSION['rank'] == 1) {
+  if ($USER['rank'] == 1) {
     echo "<script>window.location.href = '?userdetails&id=" . $_SESSION['uid'] . "';</script>";
   }
 
