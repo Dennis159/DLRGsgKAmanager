@@ -31,7 +31,13 @@ if(!key_exists($page, $PATHS)){
 }
 
 /** Hole dir den Dateipfad aus dem Path array ( inc/config/Config_Filepath.php ) */
-$path = $PATHS[$page][0] ?? null;
+$path = null;
+
+$pathinfo = $PATHS[$page];
+$rank = $_SESSION['rank'] ?? 0;
+if ($rank >= $pathinfo[6]) {
+  $path = $pathinfo[0] ?? null;
+}
 
 /** Include dir die gewünschte seite */
 include $path != null ? $path : "module/misc/404.php";

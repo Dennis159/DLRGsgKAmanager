@@ -1,6 +1,7 @@
 <?php
   $uid     = $_GET['id'];
   if($uid != $_SESSION['uid'] AND $_SESSION['rank'] == 1){
+    $uid = $_SESSION['uid'];
     echo "<script>window.location.href = '?userdetails&id=".$_SESSION['uid']."';</script>";
   }
   $PROFILE = $TOOL->query("SELECT * FROM mgmt_userfiles WHERE uid = $uid ORDER BY `rank`, nachname, vorname")->fetch();
