@@ -34,7 +34,7 @@ if(!key_exists($page, $PATHS)){
 $path = null;
 
 $pathinfo = $PATHS[$page];
-$rank = $_SESSION['rank'] ?? 0;
+$rank = $USER['rank'] ?? 0;
 if ($rank >= $pathinfo[6]) {
   $path = $pathinfo[0] ?? null;
 }
