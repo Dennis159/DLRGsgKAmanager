@@ -57,7 +57,11 @@
 
           foreach ($events as $event) {
             $members = json_decode($event['members'], true);
-            $status = in_array($user['uid'], $members) ? '<i class="fa-solid fa-check text-success"></i>' : '<i class="fa-solid fa-x text-danger"></i>';
+            if(strtotime("now") > strtotime($event['date'])){
+              $status = in_array($user['uid'], $members) ? '<i class="fa-solid fa-check text-success"></i>' : '<i class="fa-solid fa-x text-danger"></i>';
+            } else {
+              $status = '<i class="fa-solid fa-x text-muted"></i>';
+            }
             echo '<td class="text-center">' . $status . '</td>';
           }
 

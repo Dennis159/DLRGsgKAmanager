@@ -13,6 +13,8 @@ $PATHS["404"]         = array("module/misc/404.php", "Feheler 404", "", "", "", 
 $PATHS["dashboard"]   = array("module/dashboard.php", "Dashboard", "", "", "", "Dashboard");
 $PATHS["passwort-vergessen"]   = array("module/misc/password_vergessen.php", "", "", "", "", "");
 
+$PATHS["atn2_0"]   = array("module/misc/atn2-0.php", "Developement", "ATN System 2.0", "", "", "ATN System 2.0");
+
 /**
  * @Titel Benutzerverwaltung
  * @Pfad module/management/*.php
