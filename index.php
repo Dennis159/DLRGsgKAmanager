@@ -20,9 +20,9 @@ $PAGE_bc4      = $PATHS[$page][4];
 $PAGE_pagtitle = $PATHS[$page][5];
 
 /** Setze den Header wenn es sich nicht um die Login- oder not-allowed Seite handelt, wenn es sich um die Loginseite handelt, setze den ?login */
-if($page != "login" AND $page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen"){
+if($page != "login" AND $page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen" AND !(str_contains($page, "pdf"))){
   include $_SERVER['DOCUMENT_ROOT'] . "/inc/header.php";
-} elseif($page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen") {
+} elseif($page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen" AND !(str_contains($page, "pdf"))) {
   echo '<script>var newURL = window.location.origin + "/?login"; window.history.pushState({ path: newURL }, "", window.location.origin + "?login");</script>';
 }
 
@@ -37,6 +37,6 @@ $path = $PATHS[$page][0] ?? null;
 include $path != null ? $path : "module/misc/404.php";
 
 /** Setze den Footer wenn es sich nicht um die Login- oder not-allowed Seite handelt */
-if($page != "login" AND $page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen"){
+if($page != "login" AND $page != "not-allowed" AND $page != "register" AND $page != "passwort-vergessen" AND !(str_contains($page, "pdf"))){
  include $_SERVER['DOCUMENT_ROOT'] . "/inc/footer.php";
 }

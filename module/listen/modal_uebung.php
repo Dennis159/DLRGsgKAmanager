@@ -5,7 +5,7 @@
     $teilnehmer = $_POST['teilnehmer'] == null ? "[]" : json_encode($_POST['teilnehmer']);
 
     $TOOL->query("UPDATE list_uebungen SET date = '$date', name = '$name', members = '$teilnehmer' WHERE date = '".$event['date']."'");
-    GD_fnc_reload();
+    DLR_fnc_reload();
   }
 ?>
 <form method="post">

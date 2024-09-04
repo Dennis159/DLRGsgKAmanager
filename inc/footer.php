@@ -82,7 +82,7 @@ if (isset($_FILES['file']) && !empty($_FILES['file']['name'])) {
 
   $ATN = $_POST['atn'];
   $TOOL->query("UPDATE mgmt_atns SET `$ATN` = 2 WHERE UID = " . $_SESSION['uid']);
-  GD_fnc_reload();
+  DLR_fnc_reload();
 }
 ?>
 

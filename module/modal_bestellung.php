@@ -2,7 +2,7 @@
 if(isset($_POST['bestellen' . $row['id']])){
   $id = $row['id'];
   $TOOL->query("UPDATE storage_antraege SET order_date = NOW() WHERE id = $id");
-  GD_fnc_reload();
+  DLR_fnc_reload();
 }
 ?>
 <div class="modal fade" id="bestellen<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="bestellen<?php echo $row['id']; ?>Label" aria-hidden="true">

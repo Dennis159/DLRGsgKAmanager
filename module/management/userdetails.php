@@ -12,7 +12,7 @@
     $body     = "<b>".GG_fnc_getUserFile($_SESSION['uid'])['vorname']." ".GG_fnc_getUserFile($_SESSION['uid'])['nachname']."</b> hat dein Profil im DLRG SG Karlsruhe Manager freigeschaltet.";
     echo DLR_fnc_sendMail($PROFILE['email'], $subject, $body);
 
-    GD_fnc_reload();
+    DLR_fnc_reload();
   }
 ?>
 <div class="container-fluid py-4">
@@ -131,6 +131,11 @@
                   Übungsdienste
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#sandienste" role="tab" aria-controls="sandienste" aria-selected="false">
+                  Sanitätsdienste
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -141,18 +146,18 @@
               <?php if($USER['rank'] == 2){ ?><a class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#atnEdit"><i class="fa-solid fa-pen-to-square"></i> ATN bearbeiten</a><?php } ?>
               <a class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#antUpload"><i class="fa-solid fa-upload"></i> ATN hochladen</a>
               <?php
-                include "modules/modal_atn.php";
-                include is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) ? "modules/tab_atn_mobile.php" : "modules/tab_atn_computer.php";
+                include "modules/modals/modal_atn.php";
+                include is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile")) ? "modules/tabs/tab_atn_mobile.php" : "modules/tabs/tab_atn_computer.php";
               ?>
             </div>
             <div class="tab-pane" id="pool">
               <?php
-                include "modules/tab_pool.php";
+                include "modules/tabs/tab_pool.php";
               ?>
             </div>
             <div class="tab-pane" id="antraege">
               <?php
-                include "modules/tab_antraege.php";
+                include "modules/tabs/tab_antraege.php";
               ?>
             </div>
             <div class="tab-pane" id="uebungen">
@@ -179,6 +184,9 @@
                 ?>
               </table>
             </div>
+            <div class="tab-pane" id="sandienste">
+              <?php include "modules/tabs/tab_sandienste.php"; ?>
+            </div>
           </div>
 
         </div>
@@ -190,5 +198,5 @@
 
 </div>
 <?php
-  include "modules/modal_unterweisungen.php";
-  include "modules/modal_persdaten.php";
+  include "modules/modals/modal_unterweisungen.php";
+  include "modules/modals/modal_persdaten.php";

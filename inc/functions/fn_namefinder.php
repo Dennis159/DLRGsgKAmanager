@@ -11,6 +11,18 @@ function GG_fnc_getUserFile($uid): mixed
 }
 
 /**
+ * @param$uid
+ * @return  mixed
+ * @decription  Gibt dir den Namen des Users
+ */
+function GG_fnc_getUserName($uid): mixed
+{
+  global $TOOL;
+  $res = $TOOL->query("SELECT vorname, nachname FROM mgmt_userfiles WHERE uid = $uid")->fetch();
+  return $res['vorname'] . ' ' . $res['nachname'];
+}
+
+/**
  * @param $rank
  * @return string
  * @Description Wandle die Rang-Ziffer in einen Text um

@@ -20,7 +20,7 @@
   </a>
 </li>
 
-  <?php $support = array("uebungen", "atns", "einweisungen"); ?>
+  <?php $support = array("uebungen", "atns", "einweisungen","rappenwoert"); ?>
   <a data-bs-toggle="collapse" href="#Support" class="nav-link text-white <?php echo in_array($page, $support) ? "gg_active_dropdown" : ""; ?>" aria-controls="Support" role="button" aria-expanded="false">
     <i class="fa-solid fa-list"></i>
     <span class="nav-link-text ms-2 ps-1">Listen</span>
@@ -47,8 +47,38 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link navbar-dropdown-subelement <?php echo in_array($page, array("rappenwoert", "")) ? "gg_active_element" : ""; ?>" href="?Rappenwoert">&nbsp;&nbsp;
+          <span class="sidenav-mini-icon"> RW </span>
+          <span class="sidenav-normal  ms-2  ps-1"> Rappenwört </span>
+        </a>
+      </li>
+
     </ul>
   </div>
 
-<?php }
-?>
+  <?php $dienstplan = array("dienstplan-dashboard", "dienstplan-dienste"); ?>
+  <a data-bs-toggle="collapse" href="#Dienstplan" class="nav-link text-white <?php echo in_array($page, $dienstplan) ? "gg_active_dropdown" : ""; ?>" aria-controls="Support" role="button" aria-expanded="false">
+    <i class="fa-solid fa-list-tree"></i>
+    <span class="nav-link-text ms-2 ps-1">Dienstplan</span>
+  </a>
+  <div class="collapse <?php echo in_array($page, $dienstplan) ? "show" : ""; ?>" id="Dienstplan">
+    <ul class="nav ">
+      <li class="nav-item">
+        <a class="nav-link navbar-dropdown-subelement <?php echo in_array($page, array("dienstplan-dashboard", "")) ? "gg_active_element" : ""; ?>" href="?dienstplan-dashboard">&nbsp;&nbsp;
+          <span class="sidenav-mini-icon"> DB </span>
+          <span class="sidenav-normal  ms-2  ps-1"> Dashboard </span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link navbar-dropdown-subelement <?php echo in_array($page, array("dienstplan-dienste", "")) ? "gg_active_element" : ""; ?>" href="?dienstplan-dienste">&nbsp;&nbsp;
+          <span class="sidenav-mini-icon"> DP </span>
+          <span class="sidenav-normal  ms-2  ps-1"> Dienste </span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+<?php } ?>

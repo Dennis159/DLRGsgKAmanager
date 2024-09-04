@@ -1,5 +1,5 @@
 <?php
-function GD_fnc_reload(){
+function DLR_fnc_reload(){
   echo "<script>window.location.href = window.location.href;</script>";
 }
 
@@ -11,7 +11,7 @@ function DLR_checkATN($atn, $uid, $truefalse = false) : string
     $status = $return[$atn];
   } else {
     $return = json_decode($return[$atn], true);
-    $status = $return[1];
+    $status = $return;
   }
   if(!$truefalse){
     switch ($status) {

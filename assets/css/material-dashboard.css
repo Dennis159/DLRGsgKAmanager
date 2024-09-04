@@ -8124,6 +8124,7 @@ fieldset:disabled .btn {
 .link-white:hover,
 .link-white:focus {
   color: white !important;
+  text-decoration: underline!important;
 }
 
 .ratio {

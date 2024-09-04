@@ -21,8 +21,17 @@
 /**
  * Inkludiere alle Dateien aus dem Functions Ordner
  */
+  include "functions/fn_dienstplan.php";
   include "functions/fn_login.php";
   include "functions/fn_namefinder.php";
   include "functions/fn_misc.php";
   include "functions/fn_mailer.php";
 
+/*
+* Definiere Werte die Mehrfach verwendet werden und sich möglicherweise ändern könnten
+*/
+$VERDIENST = array(
+  "2023" => array("EK" => 7, "SG" => 2),
+  "2024" => array("EK" => 7, "SG" => 4),
+  "2025" => array("EK" => 7, "SG" => 4),
+);
